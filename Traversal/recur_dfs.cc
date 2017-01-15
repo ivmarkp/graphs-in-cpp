@@ -10,9 +10,7 @@ class graph {
     
     public:
         graph(int num) : nv(num), adj(num) {}
-    	void addEdge(int u, int v) {
-    		adj[u].push_back(v);
-    	}
+    	void addEdge(int u, int v) { adj[u].push_back(v); }
     	void dfs();
 };
 
@@ -20,6 +18,7 @@ void graph::traverse(int v, bool visited []) {
 	// Mark the current vertex as visited & print it.
 	visited[v] = true;
 	cout << v << ' ';
+	
 	// Traverse all the adjacent vertices to the current vertex.
 	for (auto it = adj[v].begin(); it != adj[v].end(); ++it)
 		if (visited[*it] == 0)
@@ -53,10 +52,11 @@ int main() {
 	return 0;
 }
 
-/** Time Complexity: O(V+E) where V is number of vertices & E is number of edges.
+/** 
+ * Time Complexity: O(V+E) where V is number of vertices & E is number of edges.
  *
- *  Note: The above implementation does the complete graph traversal even if the
- *  nodes are unreachable (e.g. in a disconnected graph). To do so, traverse()
- *	must be called for every vertex. Also, before calling traverse(), we check
- *	if the current vertex was already printed by some other call of traverse().
+ * Note: The above implementation does the complete graph traversal even if the
+ * nodes are unreachable (e.g. in a disconnected graph). To do so, traverse()
+ * must be called for every vertex. Also, before calling traverse(), we check
+ * if the current vertex was already printed by some other call of traverse().
  */

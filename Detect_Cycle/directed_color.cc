@@ -1,7 +1,8 @@
-/** Given a directed graph, check whether the graph contains a cycle or not.
+/** 
+ * Given a directed graph, check whether the graph contains a cycle or not.
  *
- *	Note: The idea is to do DFS of given graph and while doing traversal, assign
- *	one of the three colors (white, gray, black) to every vertex.
+ * Note: The idea is to do DFS of given graph and while doing traversal, assign
+ * one of the three colors (white, gray, black) to every vertex.
  */
 #include <bits/stdc++.h>
 using namespace std;

@@ -1,11 +1,13 @@
-/** Given a undirected graph, check whether the graph contains a cycle or not.
+/** 
+ * Given a undirected graph, check whether the graph contains a cycle or not.
  *
- *	Note: Like directed graphs, we can use DFS to detect cycle in an undirected graph.
- *	For every visited vertex ‘v’, if there is an adjacent ‘u’ such that u has
- *	already been visited and u is not parent of v, then there is a cycle in graph.
- *	
- *	The assumption of this approach is that there are no parallel edges between any
- *	two vertices.
+ * Note: Like directed graphs, we can use DFS to detect cycle in an undirected
+ * graph. For every visited vertex ‘v’, if there is an adjacent ‘u’ such that
+ * u has already been visited and u is not parent of v, then there is a cycle
+ * in graph.
+ *
+ * The assumption of this approach is that there are no parallel edges between
+ * any two vertices.
  */
 #include <bits/stdc++.h>
 using namespace std;

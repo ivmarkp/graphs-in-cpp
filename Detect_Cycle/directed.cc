@@ -1,13 +1,14 @@
-/** Given a directed graph, check whether the graph contains a cycle or not.
+/** 
+ * Given a directed graph, check whether the graph contains a cycle or not.
  *
- *	Note: There is a cycle in a graph only if there is a back edge present in
- *	it. A back edge is an edge that is from a node to itself (self-loop) or
- *	one of its ancestor i.e. an edge to the next node will form a cycle, only
- *	if that node is an ancestor of the present node.
+ * Note: There is a cycle in a graph only if there is a back edge present in
+ * it. A back edge is an edge that is from a node to itself (self-loop) or
+ * one of its ancestor i.e. an edge to the next node will form a cycle, only
+ * if that node is an ancestor of the present node.
  *
- *	To detect a back edge, we can keep track of vertices currently in recursion
- *	stack of function for DFS traversal. If we reach a vertex that is already in
- *	the recursion stack, then there is a cycle in the tree.
+ * To detect a back edge, we can keep track of vertices currently in recursion
+ * stack of function for DFS traversal. If we reach a vertex that is already in
+ * the recursion stack, then there is a cycle in the tree.
  */
 #include <bits/stdc++.h>
 using namespace std;

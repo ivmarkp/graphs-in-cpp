@@ -1,34 +1,30 @@
-/** Implementation of adjacency list representation of a graph.
- *  E.g. Consider the following graph
- *	A --- B
- *	| \   |
- *	|  \  |
- *	|	\ |
- *	D --- C
+/**
+ * Adjacency list representation of a graph.
  *
- *  Adjacency matrix for this (undirected) graph is:
- *	 0 -> 1 -> 2 -> 3
- *	 1 -> 0 -> 2
- *	 2 -> 0 -> 1 -> 3
- *	 3 -> 0 -> 2
+ * E.g. Consider the following graph
+ * A --- B
+ * | \   |
+ * |  \  |
+ * |   \ |
+ * D --- C
+ *
+ * Adjacency matrix for this (undirected) graph is:
+ * 0 -> 1 -> 2 -> 3
+ * 1 -> 0 -> 2
+ * 2 -> 0 -> 1 -> 3
+ * 3 -> 0 -> 2
  */
 #include <bits/stdc++.h>
 using namespace std;
 
 class graph {
 	// No. of vertices and edges
-	int v;
-	int e;
-	// A pointer to a vector(or array) of lists
+	int v, e;
+	// A vector(or array) of lists
 	vector<list<int>> adj_list;
 
 	public:
-		graph(int nv, int ne) { 
-			v = nv;
-			e = ne;
-			// Resize adj_list to contain v elements
-			adj_list.resize(v);
-		}
+		graph(int nv, int ne) : v(nv), e(ne), adj_list(nv) {}
 
 		~graph() {adj_list.clear();}
 
@@ -65,9 +61,11 @@ int main() {
 
 	return 0;
 }
-/** Pros: Takes space O(|V|+|E|). In the worst case, there can be C(V, 2)
- *	number of edges in a graph thus consuming O(V^2) space.
- *	
- *	Cons: Queries like whether there is an edge from vertex u to vertex v
- *	are not efficient and take O(V) time. Deleting an edge is also ineffi-
- *	-cient as it might requires traversing a long list in a large graph.
+/**
+ * Pros: Takes space O(|V|+|E|). In the worst case, there can be C(V, 2)
+ * number of edges in a graph thus consuming O(V^2) space.
+ *
+ * Cons: Queries like whether there is an edge from vertex u to vertex v
+ * are not efficient and take O(V) time. Deleting an edge is also ineffi-
+ * -cient as it might requires traversing a long list in a large graph.
+ */
