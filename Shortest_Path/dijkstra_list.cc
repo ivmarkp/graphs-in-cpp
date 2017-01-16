@@ -5,21 +5,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Graph {
-	int v;
-	vector<vector<pair<int, int>>> adj;
-	public:
-		Graph(int nv) : v(nv), adj(nv) {}
-		void addEdge(int u, int v, int wt) {
-			adj[u].push_back(make_pair(v, wt));
-			adj[v].push_back(make_pair(u, wt));
-		}
-		void djikstra(int s);
-};
+typedef pair<int, int> pairInt;
 
-void Graph::djikstra(int s) {
-	priority_queue<pair<int, int>, vector<pair<int, int>>,
-				   greater<pair<int, int>>> heap;
+void djikstra(vector<vector<pairInt>>& adj, int v, int s) {
+	priority_queue<pairInt, vector<pairInt>, greater<pairInt>> heap;
 
 	vector<int> dist(v, INT_MAX);
 	vector<int> parent(v);
@@ -49,35 +38,28 @@ void Graph::djikstra(int s) {
 		}
 	}
 
-	// Print the shortest path edges
-	for (int i = 1; i < v; i++)
-		cout << parent[i] << " -- " << i << endl;
+	// Print the shortest path edges with their respective weights.
+	for (int i = 0; i < v; i++)
+		if (parent[i] != -1)
+			cout << parent[i] << " -- " << i << " : " << dist[i] << endl;
 }
 
 int main() {
+	int vertices, edges, source;
+	cin >> vertices >> edges >> source;
 
-	Graph g(9);
+	vector<vector<pairInt>> adj(vertices);
 
-	g.addEdge(0, 1, 4);
-    g.addEdge(0, 7, 8);
-    g.addEdge(1, 2, 8);
-    g.addEdge(1, 7, 11);
-    g.addEdge(2, 3, 7);
-    g.addEdge(2, 8, 2);
-    g.addEdge(2, 5, 4);
-    g.addEdge(3, 4, 9);
-    g.addEdge(3, 5, 14);
-    g.addEdge(4, 5, 10);
-    g.addEdge(5, 6, 2);
-    g.addEdge(6, 7, 1);
-    g.addEdge(6, 8, 6);
-    g.addEdge(7, 8, 7);
+	int u, v, wt;
+	for (int i = 0; i < edges; i++) {
+		cin >> u >> v >> wt;
+		adj[u].push_back(make_pair(v, wt));
+		adj[v].push_back(make_pair(u, wt));
+	}
 
-	int source;
-	cin >> source;
-
-	g.djikstra(source);
+	djikstra(adj, vertices, source);
 
 	return 0;
 }
-// Time complexity : O(E * Log V))
+// Time complexity : O(E * Log V)). #TODO Can be further improved by using a
+// fibonaci heap instead of using a binary heap.
