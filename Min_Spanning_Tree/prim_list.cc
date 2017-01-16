@@ -17,7 +17,6 @@ class graph {
     		adj[v].push_back(make_pair(u, wt));
     	}
     	void prims(int s);
-    	void print_mst();
 };
 
 void graph::prims(int s) {
@@ -31,12 +30,14 @@ void graph::prims(int s) {
 	// intialised as INT_MAX.
 	vector<int> weight(nv, INT_MAX);
 	// Another vector to store the parent of vertices.
-	vector<int> parent(nv, -1);
+	vector<int> parent(nv);
 	// A vector to keep track of vertices included in MST.
 	vector<bool> mst(nv, false);
 
 	// Set weight of source vertex as zero.
 	weight[s] = 0;
+	// Set the parent of source vertex as -1.
+	parent[s] = -1;
 
 	// Insert source vertex in the heap.
 	heap.push(make_pair(weight[s], s));
@@ -64,6 +65,8 @@ void graph::prims(int s) {
 			}
 		}
 	}
+
+	// Print the edges of MST.
 	for (int i = 1; i < nv; i++)
 		cout << parent[i] << " -> " << i << endl;
 	cout << endl;
