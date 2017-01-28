@@ -31,11 +31,12 @@ Implementations of concepts and algorithms pertaining to CS graph theory.
   * [Floyd Warshall Algorithm](../master/Shortest_Path/floyd_warshall.cc)
 
 ### Backtracking
-  * Rat in a maze
-  * N-queen problem
-  * m-coloring problem
-  * Hamiltonian cycle
-  * Path of length > k from source
+  * [Rat in a maze I](../master/Backtracking/ratInMaze-I.cc)
+  * [Rat in a maze II](../master/Backtracking/ratInMaze-II.cc)
+  * [N-queen problem](../master/Backtracking/nQueens.cc)
+  * [m-coloring problem](../master/Backtracking/mColoring.cc)
+  * [Hamiltonian cycle](../master/Backtracking/hamiltonian.cc)
+  * [Path of length > k from source](../master/Backtracking/simplePath.cc)
 
 ### Connectivity
   * Path between two vertices in a directed graph
