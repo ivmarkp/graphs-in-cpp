@@ -39,6 +39,7 @@ Implementations of concepts and algorithms pertaining to CS graph theory.
   * [Path of length > k from source](../master/Backtracking/simplePath.cc)
 
 ### Connectivity
-  * Path between two vertices in a directed graph
-  * Connectivity in a directed graph
-  * Find the number of islands
+  * [Path between two vertices in a directed graph](../master/Connectivity/directedPath.cc)
+  * [Connectivity in a directed graph](../master/Connectivity/stronglyConnected.cc)
+  * [Find the number of islands](../master/Connectivity/countIslands.cc)
+  * [Transitive closure of a directed graph](../master/Connectivity/transitiveClosure.cc)

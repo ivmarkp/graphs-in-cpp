@@ -1,6 +1,7 @@
 /**
  * Given a directed graph, find out if a vertex j is reachable from another
- * vertex i for all vertex pairs.
+ * vertex i for all vertex pairs. Here reachable mean that there is a path from
+ * vertex i to j
  *
  * Note:  The reach-ability matrix is called transitive closure of a graph i.e.
  * graph[i][j] is 1 if there is an edge from vertex i to vertex j or i is equal
