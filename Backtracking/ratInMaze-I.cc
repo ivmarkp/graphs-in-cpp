@@ -1,8 +1,8 @@
 /**
  * Consider a rat placed at (0, 0) in a square matrix of order n and with a
- * destination to reach at (n-1, n-1). Find one possible path to do so. Store
- * the path in a binary output matrix. The directions in which the rat can move
- * are right and down only.
+ * destination to reach at (n-1, n-1). Find one possible path to do so.
+ * Store the path in a binary output matrix. The directions in which the
+ * rat can move are right and down only.
  */
 #include <bits/stdc++.h>
 using namespace std;
@@ -13,8 +13,7 @@ bool isValid(int n, int x, int y, vector<vector<int>>& in) {
 	return false;
 }
 
-bool findPathHelper(int n, int x, int y, vector<vector<int>>& out,
-					vector<vector<int>>& in) {
+bool findPathHelper(int n, int x, int y, auto& out, auto& in) {
 	if (x == n - 1 && y == n -1) {
 		out[x][y] = 1;
 		return true;

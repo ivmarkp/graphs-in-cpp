@@ -1,6 +1,6 @@
 /**
- * Djikstra's shortest path algorithm for adjacency matrix representation
- * of undirected, connected and weighted graphs.
+ * Djikstra's shortest path algo. for adjacency matrix representation of
+ * undirected, connected and weighted graphs.
  */
 #include <bits/stdc++.h>
 using namespace std;
@@ -33,8 +33,8 @@ void djikstra(vector<vector<int>>& g, int v, int s) {
 		spt_set[u] = true;
 
 		for (int j = 0; j < v; j++) {
-			if (spt_set[j] == false && g[u][j] != 0
-									&& dist[u] + g[u][j] < dist[j]) {
+			if (spt_set[j] == false
+				&& g[u][j] != 0 && dist[u] + g[u][j] < dist[j]) {
 				dist[j] = dist[u] + g[u][j];
 				parent[j] = u;
 			}

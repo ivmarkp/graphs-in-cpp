@@ -3,16 +3,18 @@
  * A graph is strongly connected if there is a path between every pair of
  * vertices which not necessarily be a _direct_ path.
  *
- * Note: For undirected graphs however, we just do a BFS and DFS starting from
- * any vertex. If BFS or DFS visits all vertices, then the given undirected
- * graph is connected. This simple approach doesn't work for a directed graph.
+ * Note: For undirected graphs however, we just do a BFS and DFS starting
+ * from any vertex. If BFS or DFS visits all vertices, then the given
+ * undirected graph is connected. This simple approach doesn't work for a
+ * directed graph.
  *
  * For directed graph, one solution is to do DFS V times starting from each
- * vertex. If any DFS, doesn’t visit all vertices, then graph is not strongly
+ * vertex. If any DFS doesn’t visit all vertices, then graph is not strongly
  * connected. This algorithm takes O(V*(V+E)) time.
  *
- * A better idea can be Strongly Connected Components (SCC) algorithm. We can
- * find all SCCs in O(V+E) time. If number of SCCs is one, then graph is strongly
+ * A better idea can be Strongly Connected Components (SCC) algorithm. We
+ * can find all SCCs in O(V+E) time. If number of SCCs is one, then graph
+ * is strongly
  * connected.
  */
 #include <bits/stdc++.h>
@@ -26,7 +28,7 @@ void transpose(vector<vector<int>>& adj, int nv) {
 	adj = adj_temp;
 }
 
-void dfs(vector<vector<int>>& adj, vector<bool>& visited, int v) {
+void dfs(auto& adj, vector<bool>& visited, int v) {
 	visited[v] = true;
 
 	for (auto it = adj[v].begin(); it != adj[v].end(); ++it)
@@ -34,8 +36,7 @@ void dfs(vector<vector<int>>& adj, vector<bool>& visited, int v) {
 			dfs(adj, visited, *it);
 }
 
-bool isStronglyConnected(vector<vector<int>>& adj, vector<bool>& visited,
-						 int nv) {
+bool isStronglyConnected(auto& adj, vector<bool>& visited, int nv) {
 	// DFS traversal starting from the first vertex
 	dfs(adj, visited, 0);
 

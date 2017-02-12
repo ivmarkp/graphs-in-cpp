@@ -1,12 +1,11 @@
 /**
- * Check whether there is a path from the first given vertex to  the second in
- * a given directed graph.
+ * Check whether there is a path from the first given vertex to the second
+ * in a given directed graph.
  */
 #include <bits/stdc++.h>
 using namespace std;
 
-bool checkPath(vector<vector<int>>& adj, vector<bool>& visited,
-			   int src, int dest) {
+bool checkPath(auto& adj, vector<bool>& visited, int src, int dest) {
 	queue<int> q;
 
 	visited[src] = true;

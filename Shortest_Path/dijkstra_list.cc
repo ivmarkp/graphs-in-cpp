@@ -1,13 +1,13 @@
 /**
- * Djikstra's shortest path algorithm for adjacency list representation
- * of undirected, connected and weighted graphs.
+ * Djikstra's shortest path algo. for adjacency list representation of
+ * undirected, connected and weighted graphs.
  */
 #include <bits/stdc++.h>
 using namespace std;
 
 typedef pair<int, int> pairInt;
 
-void djikstra(vector<vector<pairInt>>& adj, int v, int s) {
+void djikstra(auto& adj, int v, int s) {
 	priority_queue<pairInt, vector<pairInt>, greater<pairInt>> heap;
 
 	vector<int> dist(v, INT_MAX);
@@ -61,5 +61,6 @@ int main() {
 
 	return 0;
 }
-// Time complexity : O(E * Log V)). #TODO Can be further improved by using a
-// fibonaci heap instead of using a binary heap.
+// Time complexity : O(E * Log V)).
+// #TODO Can be further improved by using a fibonaci heap instead of using
+// a binary heap.

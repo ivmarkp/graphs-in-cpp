@@ -7,8 +7,7 @@ using namespace std;
 
 typedef pair<int, int> intPair;
 
-bool findPath(vector<vector<intPair>>& adj, vector<bool>& visited,
-			  int k , int src) {
+bool findPath(auto& adj, vector<bool>& visited, int k , int src) {
 	if (k <= 0)
 		return true;
 

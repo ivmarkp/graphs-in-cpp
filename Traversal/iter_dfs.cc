@@ -3,8 +3,8 @@
  *
  * Note: The recursive implementation uses function call stack. In iterative
  * implementation, an explicit stack is used to hold visited vertices. The
- * implementation is similar to BFS, the only difference is queue is replaced
- * by stack.
+ * implementation is similar to BFS, the only difference is queue is
+ * replaced by stack.
  */
 #include <bits/stdc++.h>
 using namespace std;

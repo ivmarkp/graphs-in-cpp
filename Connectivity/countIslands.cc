@@ -9,15 +9,13 @@ using namespace std;
 int rk[] = {-1, 0, 1, 1, 1, 0, -1, -1};
 int ck[] = {1, 1, 1, 0, -1, -1, -1, 0};
 
-bool isSafe(vector<vector<bool>>& graph, int i, int j,
-				vector<vector<bool>>& visited, int row, int col) {
+bool isSafe(auto& graph, int i, int j, auto& visited, int row, int col) {
 
 	return (i >= 0 && i < row && j >= 0 && j < col
 		   && graph[i][j] == 1 && !visited[i][j]);
 }
 
-void dfs(vector<vector<bool>>& graph, int i, int j,
-				vector<vector<bool>>& visited, int row, int col) {
+void dfs(auto& graph, int i, int j, auto& visited, int row, int col) {
 	visited[i][j] = true;
 
 	for (int k = 0; k < 8; k++)
@@ -25,8 +23,7 @@ void dfs(vector<vector<bool>>& graph, int i, int j,
 			dfs(graph, i + rk[k], j + ck[k], visited, row, col);
 }
 
-int countIslands(int row, int col, vector<vector<bool>>& graph,
-				  vector<vector<bool>>& visited) {
+int countIslands(int row, int col, auto& graph, auto& visited) {
 	int count = 0;
 	for (int i = 0; i < row; i++)
 		for (int j = 0; j < col; j++)

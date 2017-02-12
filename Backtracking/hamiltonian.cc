@@ -1,11 +1,11 @@
 /**
- * Determine whether a given graph contains Hamiltonian Cycle or not. If yes.
- * then print the path.
+ * Determine whether a given graph contains Hamiltonian Cycle or not. If
+ * yes, then print the path.
  */
 #include <bits/stdc++.h>
 using namespace std;
 
-bool isSafe(int u, vector<vector<int>>& graph, vector<int>& path, int p) {
+bool isSafe(int u, auto& graph, vector<int>& path, int p) {
 	// Check if the vertex is adjacent to the last added vertex
 	if (graph[path[p-1]][u] == 0)
 		return false;
@@ -17,8 +17,7 @@ bool isSafe(int u, vector<vector<int>>& graph, vector<int>& path, int p) {
 	return true;
 }
 
-bool hamiltonian(int v, vector<vector<int>>& graph,
-				 vector<int>& path, int s, int index) {
+bool hamiltonian(int v, auto& graph, auto& path, int s, int index) {
 	// If all vertices are included in Hamiltonian cycle
 	if (index >= v) {
 		// And if most recently inserted vertex is adjacent to the

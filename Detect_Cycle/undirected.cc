@@ -1,12 +1,13 @@
-/** 
- * Given a undirected graph, check whether the graph contains a cycle or not.
+/**
+ * Given an undirected graph, check whether the graph contains a cycle or
+ * not.
  *
- * Note: Like directed graphs, we can use DFS to detect cycle in an undirected
- * graph. For every visited vertex ‘v’, if there is an adjacent ‘u’ such that
- * u has already been visited and u is not parent of v, then there is a cycle
- * in graph.
+ * Note: Like directed graphs, simple DFS can detect cycle in an undirected
+ * graph. For every visited vertex ‘v’, if there is an adjacent ‘u’ such
+ * that u has already been visited and u is not parent of v, then there is
+ * a cycle in graph.
  *
- * The assumption of this approach is that there are no parallel edges between
+ * One required assumption is that there will be no parallel edges between
  * any two vertices.
  */
 #include <bits/stdc++.h>
@@ -29,7 +30,7 @@ class graph {
 
 bool graph::util(int s, vector<bool>& visited, int parent) {
 	visited[s] = true;
-	
+
 	// Recur through all the adjacent vertices to the current vertex
 	for (auto i = adj[s].begin(); i != adj[s].end(); ++i) {
 		// If an adjacent vertex has not been visited then recur for it.
@@ -37,7 +38,7 @@ bool graph::util(int s, vector<bool>& visited, int parent) {
 			if(util(*i, visited, s))
 				return true;
 		}
-		
+
 		// If an adjacent has been visited and it's not the parent
 		// then it forms a cycle in the graph.
 		else if (*i != parent)
@@ -49,7 +50,7 @@ bool graph::util(int s, vector<bool>& visited, int parent) {
 bool graph::cyclic() {
 	// Mark all vertices as not visited.
     vector<bool> visited(nv, false);
-	
+
 	// Call Util for each vertex.
     for (int i = 0; i < nv; i++) {
     	// Recur only if i has not been visited.
@@ -63,7 +64,7 @@ bool graph::cyclic() {
 
 int main() {
 	graph g(4);
-	
+
 	g.addEdge(0, 1);
 	g.addEdge(0, 2);
 	g.addEdge(1, 3);
@@ -73,7 +74,7 @@ int main() {
 		cout << "Graph is cyclic.\n";
 	else
 		cout << "Not a cyclic graph.\n";
-	
+
 	return 0;
 }
 // Time Complexity: Same as DFS i.e. O(V + E).

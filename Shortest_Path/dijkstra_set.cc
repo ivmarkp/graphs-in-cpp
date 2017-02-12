@@ -1,6 +1,6 @@
 /**
- * Djikstra's shortest path algorithm for adjacency list representation
- * of undirected, connected and weighted graphs.
+ * Djikstra's shortest path algorithm for adjacency list representation of
+ * undirected, connected and weighted graphs.
  */
 #include <bits/stdc++.h>
 using namespace std;

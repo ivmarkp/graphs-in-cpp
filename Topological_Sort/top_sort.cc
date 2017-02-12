@@ -7,12 +7,13 @@
  * if the graph is not a DAG.
  *
  * We can modify DFS to find topological sorting of a DAG. In DFS, we start
- * from a vertex, we first print it and then recursively call DFS for its adj-
- * -acent vertices. In topological sorting, we use a temporary stack. We don’t
- * print the vertex immediately, first recursively call topological sorting for
- * all its adjacent vertices, then push it to a stack. Finally, print the cont-
- * -ents of stack. A vertex is pushed onto stack only when all of its adjacent
- * vertices (and their adjacent vertices and so on) are already in stack.
+ * from a vertex, we first print it and then recursively call DFS for its
+ * adjacent vertices. In topological sorting, we use a temporary stack. We
+ * don’t print the vertex immediately, first recursively call topological
+ * sorting for all its adjacent vertices, then push it to a stack. Finally,
+ * print the contents of stack. A vertex is pushed onto stack only when all
+ * of its adjacent vertices (and their adjacent vertices and so on) are
+ * already in stack.
  */
 #include <bits/stdc++.h>
 using namespace std;
@@ -76,4 +77,4 @@ int main() {
 	return 0;
 }
 // This algorithm is simply DFS with an extra stack.
-// So time complexity is same as DFS i.e. O(V+E).
+// So, its time complexity is same as DFS i.e. O(V+E).

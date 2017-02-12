@@ -1,8 +1,8 @@
 /**
  * Consider a rat placed at (0, 0) in a square matrix of order n and with a
- * destination to reach at (n-1, n-1). Find one possible path to do so. Store
- * the path in a binary output matrix. The directions in which the rat can move
- * are right, down, top and left.
+ * destination to reach at (n-1, n-1). Find one possible path to do so.
+ * Store the path in a binary output matrix. The directions in which the
+ * rat can move are right, down, top and left.
  */
 #include <bits/stdc++.h>
 using namespace std;
@@ -13,8 +13,7 @@ bool isValid(int n, int x, int y, vector<vector<int>>& in) {
 	return false;
 }
 
-bool findPathHelper(int n, int x, int y, vector<vector<int>>& out,
-					vector<vector<int>>& in) {
+bool findPathHelper(int n, int x, int y, auto& out, auto& in) {
 	if (x == n - 1 && y == n -1) {
 		out[x][y] = 1;
 		return true;
@@ -22,23 +21,23 @@ bool findPathHelper(int n, int x, int y, vector<vector<int>>& out,
 		if (isValid(n, x, y, in)) {
 			out[x][y] = 1;
 
-			// Explore righward path
+			// Explore righward path.
 			if (findPathHelper(n, x+1, y, out, in))
 				return true;
 
-			// Explore downward path
+			// Explore downward path.
 			if (findPathHelper(n, x, y+1, out, in))
 				return true;
 
-			// Explore topward path
+			// Explore topward path.
 			if (findPathHelper(n, x, y-1, out, in))
 				return true;
 
-			// Explore leftward path
+			// Explore leftward path.
 			if (findPathHelper(n, x-1, y, out, in))
 				return true;
 
-			// If path not found yet then backtrack i.e. unmark x, y
+			// If path not found yet then backtrack (unmark x, y).
 			out[x][y] = 0;
 			return false;
 		}

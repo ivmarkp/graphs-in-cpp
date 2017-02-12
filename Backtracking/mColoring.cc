@@ -6,8 +6,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool isSafe(int v, vector<vector<int>>& graph, vector<int>& color,
-			int node, int c) {
+bool isSafe(int v, auto& graph, auto& color, int node, int c) {
 	// Check if adjacent vertices of node are of same color
 	for (int i = 0; i < v; i++)
 		if (graph[node][i] == 1 && color[i] == c)
@@ -16,8 +15,7 @@ bool isSafe(int v, vector<vector<int>>& graph, vector<int>& color,
 	return true;
 }
 
-bool colorGraph(int v, vector<vector<int>>& graph, vector<int>& color,
-				int m, int node) {
+bool colorGraph(int v, auto& graph, auto& color, int m, int node) {
 	if (node >= v) {
 		// Print colors assigned to vertices
 		for (int i = 0; i < color.size(); i++)
