@@ -82,5 +82,5 @@ int main() {
 
 	return 0;
 }
-// Time Complexity: O(E * LogE) for sorting edges + O(LogV) time for
-// find-union algorithm So, overall complexity is O(E * LogE + LogV).
+// Time Complexity: O(E * LogE) for sorting edges + O(LogV) time for find-
+// -union algorithm So, overall complexity is O(E * LogE + LogV).

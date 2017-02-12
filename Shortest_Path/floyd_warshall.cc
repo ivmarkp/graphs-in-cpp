@@ -9,8 +9,8 @@ void floydWarshal(int v, vector<vector<int>>& graph) {
 	// Output matrix to store computed shortest paths
 	int out[v][v];
 
-	// Initialise output matrix same as input graph matrix except
-	// changing -1s with INT_MAX
+	// Initialise output matrix same as input graph matrix except changing
+	// -1s with INT_MAX
 	for (int i = 0; i < v; i++) {
 		for (int j = 0; j < v; j++) {
 			if (graph[i][j] == -1)

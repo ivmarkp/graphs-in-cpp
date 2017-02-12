@@ -22,8 +22,8 @@ using namespace std;
 class graph {
 	// No. of vertices and edges
 	int v, e;
-	// A pointer to a 2-D array or directly
-	// declare an array as adj_matrix[][MAX_SIZE]
+	// A pointer to a 2-D array or directly declare an array as
+	// adj_matrix[][MAX_SIZE]
 	int **adj_matrix;
 
 	public:
@@ -75,9 +75,9 @@ int main() {
 	return 0;
 }
 /**
- * Pros: Representation is easier to implement and follow. Removing an
- * edge takes O(1) time. Queries like whether there is an edge from
- * vertex ‘u’ to vertex ‘v’ are efficient and can be done O(1).
+ * Pros: Representation is easier to implement and follow. Removing an edge
+ * takes O(1) time. Queries like whether there is an edge from vertex ‘u’
+ * to vertex ‘v’ are efficient and can be done O(1).
  *
  * Cons: Consumes more space O(V^2). Even if the graph is sparse(contains
  * less number of edges), it consumes the same space. Adding a vertex is

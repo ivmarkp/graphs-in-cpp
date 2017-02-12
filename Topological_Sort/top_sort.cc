@@ -76,5 +76,5 @@ int main() {
 
 	return 0;
 }
-// This algorithm is simply DFS with an extra stack.
-// So, its time complexity is same as DFS i.e. O(V+E).
+// This algorithm is simply DFS with an extra stack. So, its time complexity
+// is same as DFS i.e. O(V+E).

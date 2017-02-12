@@ -28,9 +28,9 @@ void graph::traverse(int s, vector<bool>& visited) {
         cout << s << " ";
         q.pop();
 
-        // Go through all the adjacent vertices of dequeued
-        // vertex one by one and if it has not been visited,
-        // then mark it visited and enqueue it.
+        // Go through all the adjacent vertices of dequeued vertex one by
+        // one and if it has not been visited, then mark it visited and
+        // enqueue it.
         for(auto it = adj[s].begin(); it != adj[s].end(); ++it) {
             if(!visited[*it]) {
                 visited[*it] = true;

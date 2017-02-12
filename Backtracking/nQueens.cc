@@ -46,8 +46,8 @@ void allSolutions(int n, vector<vector<int>>& board, int col) {
 			// Recur to place rest of the queens in other cols
 			allSolutions(n, board, col+1);
 
-			// If placing in out[row][col] doesn't lead to a
-			// solution then backtrack i.e. unmark out[row][col]
+			// If placing in out[row][col] doesn't lead to a solution then
+			// backtrack i.e. unmark out[row][col]
 			board[row][col] = 0;
 		}
 	}

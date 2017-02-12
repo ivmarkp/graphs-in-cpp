@@ -41,8 +41,8 @@ bool graph::util(int s, auto& visited, auto& recur_stack) {
 				if (util(*i, visited, recur_stack))
 					return true;
 			}
-			// If an adjacent has been visited and is present in the
-			// recur_stack then it forms a cycle in the graph.
+			// If an adjacent has been visited & is present in recur_stack
+			// then it forms a cycle in the graph.
 			else if (recur_stack[*i])
 				return true;
 		}

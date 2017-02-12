@@ -27,11 +27,11 @@ void djikstra(vector<vector<pairInt>>& adj, int v, int s) {
 			int v = (*it).first;
 			int dist_v = (*it).second;
 
-			// Update distance of v from source if there's
-			// a shorter path to v via u.
+			// Update distance of v from source if there's a shorter path
+			// to v via u.
 			if (dist[v] > dist[ulabel] + dist_v) {
-				// If v in the set, remove it and insert again
-                // with updated less distance.
+				// If v in the set, remove it and insert again with updated
+				// less distance.
                 if (dist[v] != INT_MAX)
                 	eset.erase(eset.find(make_pair(dist[v], v)));
 

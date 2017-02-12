@@ -21,8 +21,8 @@ void transitiveClosure(int nv, vector<vector<bool>> graph) {
         for (int i = 0; i < nv; i++) {
             // Pick all vertices as destination for the above source
             for (int j = 0; j < nv; j++) {
-                // If vertex k is on a path from i to j, then
-                // set value of reach[i][j] as 1.
+                // If vertex k is on a path from i to j, then set value of
+                // reach[i][j] as 1.
                 res[i][j] = res[i][j] || (res[i][k] && res[k][j]);
             }
         }

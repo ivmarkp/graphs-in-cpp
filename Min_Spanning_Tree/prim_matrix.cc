@@ -17,8 +17,8 @@ int findMinKeyVertex(vector<int>& k, vector<bool>& mst, int v) {
 }
 
 void primsMST(vector<vector<int>>& graph, int v) {
-	// A vector to store key values of all vertices with all keys
-	// intialised as INT_MAX.
+	// A vector for key values of all vertices with all keys initialised
+	// as INT_MAX.
 	vector<int> key(v, INT_MAX);
 
 	// A boolean vector to represent set of vertices included in MST.
@@ -27,8 +27,8 @@ void primsMST(vector<vector<int>>& graph, int v) {
 	// A vector to store indices of parents in MST.
 	vector<int> parent(v);
 
-	// Starting from vertex 0 so set its key as 0 and as it is the root
-	// of MST so set its parent as -1.
+	// Starting from vertex 0 so set its key as 0 and as it is the root of
+	// MST so set its parent as -1.
 	key[0] = 0;
 	parent[0] = -1;
 

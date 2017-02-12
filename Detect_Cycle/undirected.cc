@@ -39,8 +39,8 @@ bool graph::util(int s, vector<bool>& visited, int parent) {
 				return true;
 		}
 
-		// If an adjacent has been visited and it's not the parent
-		// then it forms a cycle in the graph.
+		// If an adjacent has been visited and it's not the parent then it
+		// forms a cycle in the graph.
 		else if (*i != parent)
 			return true;
 	}

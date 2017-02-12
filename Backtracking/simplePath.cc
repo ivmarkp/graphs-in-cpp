@@ -20,15 +20,15 @@ bool findPath(auto& adj, vector<bool>& visited, int k , int src) {
 		if (visited[v])
 			continue;
 
-		// If weight of this vertex is more than, equal to k; return
-		// true otherwise mark this vertex in visited array
+		// If weight of this vertex is more than, equal to k; return true
+		// otherwise mark this vertex in visited array
 		if (v_wt >= k)
 			return true;
 
 		visited[v] = true;
 
-		// Recur to check this vertex's weight is more than k
-		// and src is now updated to v
+		// Recur to check this vertex's weight is more than k and src is
+		// now updated to v
 		if (findPath(adj, visited, k-v_wt, v))
 			return true;
 
@@ -55,7 +55,7 @@ int main() {
 	vector<bool> visited(nv, false);
 	visited[src] = true;
 
-	// Check if a simple 	path exists
+	// Check if a simple path exists
 	if (!findPath(adj, visited, k , src))
 		cout << "No simple path exists...\n";
 	else

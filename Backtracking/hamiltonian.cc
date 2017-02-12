@@ -20,8 +20,8 @@ bool isSafe(int u, auto& graph, vector<int>& path, int p) {
 bool hamiltonian(int v, auto& graph, auto& path, int s, int index) {
 	// If all vertices are included in Hamiltonian cycle
 	if (index >= v) {
-		// And if most recently inserted vertex is adjacent to the
-		// first vertex
+		// And if most recently inserted vertex is adjacent to the first
+		// vertex
 		if (graph[path[index-1]][path[0]]) {
 			for (int i = 0; i < v; i++)
 				cout << path[i] << ' ';
@@ -40,8 +40,8 @@ bool hamiltonian(int v, auto& graph, auto& path, int s, int index) {
 			if (hamiltonian(v, graph, path, s, index+1))
 				return true;
 
-			// Backtrack: If adding vertex i doesn't lead to
-			// a solution (hamiltonian cycle), then remove it
+			// Backtrack: If adding vertex i doesn't lead to a solution
+			// (hamiltonian cycle), then remove it
 			path[index] = -1;
 		}
 	}

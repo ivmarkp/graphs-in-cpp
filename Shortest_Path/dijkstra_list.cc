@@ -26,8 +26,8 @@ void djikstra(auto& adj, int v, int s) {
 			int v = (*it).first;
 			int dist_v = (*it).second;
 
-			// Update distance of v from source if there's
-			// a shorter path to v via u.
+			// Update distance of v from source if there's a shorter path
+			// to v via u.
 			if (dist[v] > dist[u] + dist_v) {
 				dist[v] = dist[u] + dist_v;
 				// Update parent of v as u.

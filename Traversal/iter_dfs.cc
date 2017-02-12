@@ -33,16 +33,16 @@ void graph::traverse(int s, vector<bool>& visited) {
         int p = st.top();
         st.pop();
 
-        // Stack may contain same vertex twice. So, print the
-        // popped item, only if it has not been visited.
+        // Stack may contain same vertex twice. So, print the popped item,
+        // only if it has not been visited.
         if (!visited[p]) {
             cout << p << " ";
             visited[p] = true;
         }
 
-        // Go through all the adjacent vertices of popped
-        // vertex one by one and if it has not been visited,
-        // then mark it visited and push it onto stack.
+        // Go through all the adjacent vertices of popped vertex one by one
+        // and if it has not been visited, then mark it visited and push it
+        // onto stack.
         for(auto it = adj[p].begin(); it != adj[p].end(); ++it)
             if(!visited[*it])
                 st.push(*it);
